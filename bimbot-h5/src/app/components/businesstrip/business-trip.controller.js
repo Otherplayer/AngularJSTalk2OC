@@ -17,7 +17,7 @@ angular.module('businesstrip', []).controller('businessTripController', function
         //         $scope.names = response.sites;
         //     })
 
-    $scope.p2333 = 'p23333333';
+    $scope.p2333 = {"sd":"sdaf"};
 
 
     console.log(JSON.stringify($scope.p2333));

@@ -43,7 +43,7 @@
         <div class="form-group">
           <label class="col-sm-3 control-label">公文标题</label>
           <div class="col-sm-9">
-            <input type="text" class="form-control" placeholder="请输入公文标题" ng-model="p2333" required >
+            <input type="text" class="form-control" placeholder="请输入公文标题" ng-model="firstName" required >
           </div>
         </div>
         <div class="line line-dashed b-b line-lg pull-in"></div>
@@ -101,26 +101,16 @@
         <div class="line line-dashed b-b line-lg pull-in"></div>
       </div>
       <footer class="panel-footer text-right bg-light lter">
-        <button type="button" class="btn btn-default col-sm-6 col-md-6" onclick="submitA()">Cancel</button>
-        <button type="button" id="lbtnTest" class="btn btn-success col-sm-6 col-md-6" onclick="javascript:testobject.TestOneParameter('b');">Submit</button>
+        <button type="button" class="btn btn-default col-sm-6 col-md-6" onclick="cancelAction()">Cancel</button>
+        <button type="button" id="lbtnTest" class="btn btn-success col-sm-6 col-md-6" onclick="submitAction()">Submit</button>
       </footer>
     </div>
   </form>s
 </div>
 
-<h2>This is html content, click red button to call js method !</h2>
-
-<h2>点击按钮调用oc的方法(无参)<a href="testobject.TestNOParameter();" class="btn ps-cs6">调用oc</a></h2>
-
-<h2>点击按钮调用oc的方法(一参)<a href="javascript:testobject.TestOneParameter('hjjjh');" class="btn ps-cs6">调用oc</a></h2>
-
-<h2>点击按钮调用oc的方法(二参)<a href="javascript:testobject.TestTowParameterSecondParameter('sssss','ssss');" class="btn ps-cs6">调用oc</a></h2>
-
-
 <script>
 
-
-  function submitA() {
+  function submitAction() {
     //通过controller来获取Angular应用
     var appElement = document.querySelector('[ng-controller=businessTripController]');
     //获取$scope变量
@@ -129,27 +119,18 @@
     $scope.msg = '123456';
     //上一行改变了msg的值，如果想同步到Angular控制器中，则需要调用$apply()方法即可
     $scope.$apply();
-    testobject.TestOneParameter($scope.p2333);
+    testobject.TestOneParameter(JSON.stringify($scope.p2333));
+  }
+  function cancelAction() {
+
   }
 
-
-  function testobject(firstname,lastname)
-  {
-    this.firstname=firstname;
-    this.lastname=lastname;
-//    console.log(p2333.toJSON);
-    function TestNOParameter(){
+  function testobject(firstname,lastname) {
+    function TestNOParameter() {
     }
-    alert('ssss');
     function TestOneParameter(name){
     }
-
-
-
-
     function TestTowParameterSecondParameter(name,name2){
-      this.lastname = name;
-      this.lastname = name2;
     }
   }
 </script>
