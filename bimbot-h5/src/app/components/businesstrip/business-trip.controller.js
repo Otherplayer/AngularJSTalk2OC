@@ -4,13 +4,18 @@
 
 
 angular.module('businesstrip', []).controller('businessTripController', function($scope,$http) {
-        $scope.firstName = "John";
-        $scope.lastName = "Doe";
-        $scope.fullName = function() {
-            return $scope.firstName + " " + $scope.lastName;
-        }
-
-
+    $scope.gwTitle = '';
+    $scope.gwAddress = '';
+    $scope.gwStartDate = '';
+    $scope.gwStartDate = '';
+    $scope.gwEndDate = '';
+    $scope.gwNeedAirTicket = true;
+    $scope.airlinesFrom = ['Beijing','Shanghai','ZhengZhou'];
+    $scope.airlinesTo = ['Beijing','Shanghai','ZhengZhou'];
+    $scope.airports = ['海南航空'];
+    $scope.gwFrom = $scope.airlinesFrom[0];
+    $scope.gwTo = $scope.airlinesTo[0];
+    $scope.gwAirplane = $scope.airports[0];
         // $http.get("/bimbot-h5/src/assets/api/data.json")
         //     .success(function (response) {
         //         console.log(response);
@@ -21,9 +26,10 @@ angular.module('businesstrip', []).controller('businessTripController', function
     $scope.msg = '你好，Angular！';
 
 
-    $scope.airlinesFrom = ['Beijing','Shanghai','ZhengZhou'];
-    $scope.airlinesTo = ['Beijing','Shanghai','ZhengZhou'];
-    $scope.airports = ['海南航空'];
+    $scope.shouldApplyAirTicket = function (value) {
+        $scope.gwNeedAirTicket = value;
+    }
+
 
     $scope.availableColors = ['Red','Green','Blue','Yellow','Magenta','Maroon','Umbra','Turquoise'];
 

@@ -43,14 +43,14 @@
         <div class="form-group">
           <label class="col-sm-3 control-label">公文标题</label>
           <div class="col-sm-9">
-            <input type="text" class="form-control" placeholder="请输入公文标题" ng-model="firstName" required >
+            <input type="text" class="form-control" placeholder="请输入公文标题" ng-model="gwTitle" required >
           </div>
         </div>
         <div class="line line-dashed b-b line-lg pull-in"></div>
         <div class="form-group">
           <label class="col-sm-3 control-label">出差地点</label>
           <div class="col-sm-9">
-            <input type="text" class="form-control" placeholder="您出差到什么地方" ng-model="lastName" required >
+            <input type="text" class="form-control" placeholder="您出差到什么地方" ng-model="gwAddress" required >
           </div>
         </div>
         <div class="line line-dashed b-b line-lg pull-in"></div>
@@ -60,13 +60,13 @@
         <div class="form-group">
           <label class="col-xs-2 col-sm-2 control-label text-center text-muted">从</label>
           <div class="col-xs-10 col-sm-10">
-            <input type="date" class="form-control" placeholder="出差开始时间" ng-model="g.c" required >
+            <input type="date" class="form-control" placeholder="出差开始时间" ng-model="gwStartDate" required >
           </div>
         </div>
         <div class="form-group">
           <label class="col-xs-2 col-sm-2 control-label text-center text-muted">到</label>
           <div class="col-xs-10 col-sm-10">
-            <input type="date" class="form-control" placeholder="出差结束时间" ng-model="g.d" required >
+            <input type="date" class="form-control" placeholder="出差结束时间" ng-model="gwEndDate" required >
           </div>
         </div>
         <div class="line line-dashed b-b line-lg pull-in"></div>
@@ -74,49 +74,49 @@
           <label class="col-sm-3 control-label">是否申请机票</label>
           <div class="col-sm-9">
             <label class="checkbox-inline i-checks text-muted">
-              <input type="radio" name="optionsRadios" value="option1"><i></i> 是
+              <input type="radio" ng-checked="gwNeedAirTicket" name="optionsRadios" ng-click="shouldApplyAirTicket(true)" value="option1"><i></i> 是
             </label>
             <label class="checkbox-inline i-checks text-muted">
-              <input type="radio" name="optionsRadios" value="option2"><i></i> 否
+              <input type="radio" ng-checked="!gwNeedAirTicket" name="optionsRadios" ng-click="shouldApplyAirTicket(false)" value="option2"><i></i> 否
             </label>
           </div>
         </div>
         <div class="line line-dashed b-b line-lg pull-in"></div>
-        <div class="form-group">
-          <label class="col-sm-3 control-label">是否订座</label>
-          <div class="col-sm-9">
-            <label class="checkbox-inline i-checks text-muted">
-              <input type="radio" name="optionsRadios2" value="option1"><i></i> 是
-            </label>
-            <label class="checkbox-inline i-checks text-muted">
-              <input type="radio" name="optionsRadios2" value="option2"><i></i> 否
-            </label>
-          </div>
-        </div>
+        <!--<div class="form-group">-->
+          <!--<label class="col-sm-3 control-label">是否订座</label>-->
+          <!--<div class="col-sm-9">-->
+            <!--<label class="checkbox-inline i-checks text-muted">-->
+              <!--<input type="radio" name="optionsRadios2" value="option1"><i></i> 是-->
+            <!--</label>-->
+            <!--<label class="checkbox-inline i-checks text-muted">-->
+              <!--<input type="radio" name="optionsRadios2" value="option2"><i></i> 否-->
+            <!--</label>-->
+          <!--</div>-->
+        <!--</div>-->
         <div class="line line-dashed b-b line-lg pull-in"></div>
-        <div class="form-group">
+        <div class="form-group" ng-hide="!gwNeedAirTicket">
           <label class="col-sm-3 control-label">航线选择</label>
         </div>
-        <div class="form-group">
+        <div class="form-group" ng-hide="!gwNeedAirTicket">
           <label class="col-xs-2 col-sm-2 control-label text-center text-muted">从</label>
           <div class="col-xs-10 col-sm-10">
-            <select class="form-control">
+            <select class="form-control" ng-model="gwFrom">
               <option ng-repeat="airline in airlinesFrom">{{airline}}</option>
             </select>
           </div>
         </div>
-        <div class="form-group">
+        <div class="form-group" ng-hide="!gwNeedAirTicket">
           <label class="col-xs-2 col-sm-2 control-label text-center text-muted">到</label>
           <div class="col-xs-10 col-sm-10">
-            <select class="form-control">
+            <select class="form-control" ng-model="gwTo">
               <option ng-repeat="airline in airlinesTo">{{airline}}</option>
             </select>
           </div>
         </div>
-        <div class="form-group">
+        <div class="form-group" ng-hide="!gwNeedAirTicket">
           <label class="col-sm-3 control-label">承运人</label>
             <div class="col-sm-9">
-            <select class="form-control">
+            <select class="form-control" ng-model="gwAirplane">
               <option ng-repeat="air in airports">{{air}}</option>
             </select>
           </div>
@@ -144,8 +144,8 @@
     //上一行改变了msg的值，如果想同步到Angular控制器中，则需要调用$apply()方法即可
     $scope.$apply();
     $scope.p2333 = $scope.firstName + $scope.lastName;
-    console.log($scope.p2333);
-    JSObject.jsSubmit(JSON.stringify($scope.p2333));
+    console.log($scope.gwFrom);
+//    JSObject.jsSubmit(JSON.stringify($scope.p2333));
   }
   function cancelAction() {
     JSObject.jsCancel();
