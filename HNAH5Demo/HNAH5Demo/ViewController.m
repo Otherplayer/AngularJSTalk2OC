@@ -61,12 +61,12 @@
     //首先创建JSContext 对象（此处通过当前webView的键获取到jscontext）
     JSContext *context=[webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
     
-    //第二种情况，js是通过对象调用的，我们假设js里面有一个对象 testobject 在调用方法
+    //第二种情况，js是通过对象调用的，我们假设js里面有一个对象 JSObject 在调用方法
     //首先创建我们新建类的对象，将他赋值给js的对象
     
     
     
-    context[@"testobject"] = ^() {
+    context[@"JSObject"] = ^() {
         NSArray *args = [JSContext currentArguments];
         NSLog(@"Parameters");
         __block NSString *paramStr = @"";
@@ -78,16 +78,7 @@
     
     
     TransportJSObject *testJO=[TransportJSObject new];
-    context[@"testobject"]=testJO;
-    //同样我们也用刚才的方式模拟一下js调用方法
-    //    NSString *jsStr1=@"testobject.TestNOParameter()";
-    //    [context evaluateScript:jsStr1];
-    //    NSString *jsStr2=@"testobject.TestOneParameter()";
-    //    [context evaluateScript:jsStr2];
-    //    NSString *jsStr3=@"testobject.TestTowParameterSecondParameter('参数A','参数B')";
-    //    [context evaluateScript:jsStr3];
-    
-    
+    context[@"JSObject"]=testJO;
 }
 
 

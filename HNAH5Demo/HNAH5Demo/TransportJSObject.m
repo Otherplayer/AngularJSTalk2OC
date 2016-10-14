@@ -10,16 +10,12 @@
 
 @implementation TransportJSObject
 //一下方法都是只是打了个log 等会看log 以及参数能对上就说明js调用了此处的iOS 原生方法
--(void)TestNOParameter
+-(void)jsCancel
 {
-    NSLog(@"this is ios TestNOParameter");
+    NSLog(@"this is ios jsCancel");
 }
--(void)TestOneParameter:(NSString *)message
+-(void)jsSubmit:(NSString *)message
 {
-    NSLog(@"this is ios TestOneParameter=%@",message);
-}
--(void)TestTowParameter:(NSString *)message1 SecondParameter:(NSString *)message2
-{
-    NSLog(@"this is ios TestTowParameter=%@  Second=%@",message1,message2);
+    NSLog(@"this is ios jsSubmit=%@",message);
 }
 @end

@@ -17,45 +17,7 @@ angular.module('businesstrip', []).controller('businessTripController', function
         //         $scope.names = response.sites;
         //     })
 
-    $scope.p2333 = {"sd":"sdaf"};
-
-
-    console.log(JSON.stringify($scope.p2333));
-
-    $scope.submitAction = function() {
-        console.log('submitAction');
-        return 'abcdefg';
-    }
+    $scope.p2333 = $scope.firstName + $scope.lastName;
     $scope.msg = '你好，Angular！';
-    $scope.getData = function () {
-        return 'qubernet';
-    }
-    $scope.submitAction2 = function() {
-        console.log('submitAction');
-        alert('ssss');
-        // javascript:testobject.TestNOParameter();
-    }
 
-   //  $scope.testobject = function(firstname,lastname) {
-   //      this.firstname=firstname;
-   //      this.lastname=lastname;
-   // console.log('sssss');
-   //      $scope.TestNOParameter = function () {
-   //          console.log('ssssssssss');
-   //      }
-   //      // function TestNOParameter(){
-   //      //     console.log('ssssssssss');
-   //      // }
-   //      alert('ssss');
-   //      function TestOneParameter(name){
-   //      }
-   //
-   //
-   //
-   //
-   //      function TestTowParameterSecondParameter(name,name2){
-   //          this.lastname = name;
-   //          this.lastname = name2;
-   //      }
-   //  }
 });

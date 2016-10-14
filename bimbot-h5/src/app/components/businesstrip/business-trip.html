@@ -119,19 +119,17 @@
     $scope.msg = '123456';
     //上一行改变了msg的值，如果想同步到Angular控制器中，则需要调用$apply()方法即可
     $scope.$apply();
-    testobject.TestOneParameter(JSON.stringify($scope.p2333));
+    $scope.p2333 = $scope.firstName + $scope.lastName;
+    console.log($scope.p2333);
+    JSObject.jsSubmit(JSON.stringify($scope.p2333));
   }
   function cancelAction() {
-
+    JSObject.jsCancel();
   }
 
-  function testobject(firstname,lastname) {
-    function TestNOParameter() {
-    }
-    function TestOneParameter(name){
-    }
-    function TestTowParameterSecondParameter(name,name2){
-    }
+  function JSObject() {
+    function jsSubmit(parameter) {}
+    function jsCancel() {}
   }
 </script>
 

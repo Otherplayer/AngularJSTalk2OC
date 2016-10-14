@@ -13,9 +13,8 @@
 @protocol TransportJSObjectProtocol <JSExport>
 
 //此处我们测试几种参数的情况
--(void)TestNOParameter;
--(void)TestOneParameter:(NSString *)message;
--(void)TestTowParameter:(NSString *)message1 SecondParameter:(NSString *)message2;
+-(void)jsCancel;
+-(void)jsSubmit:(NSString *)message;
 
 @end
 
