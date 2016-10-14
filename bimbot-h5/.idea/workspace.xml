@@ -24,8 +24,8 @@
       <file leaf-file-name="business-trip.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/components/businesstrip/business-trip.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="124" column="3" selection-start-line="124" selection-start-column="3" selection-end-line="124" selection-end-column="3" />
+            <state relative-caret-position="339">
+              <caret line="127" column="23" selection-start-line="127" selection-start-column="23" selection-end-line="127" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -199,7 +199,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../iot-web" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
@@ -287,12 +287,12 @@
       <workItem from="1476342967334" duration="8069000" />
       <workItem from="1476353773747" duration="633000" />
       <workItem from="1476407814871" duration="66000" />
-      <workItem from="1476408159599" duration="825000" />
+      <workItem from="1476408159599" duration="3893000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16184000" />
+    <option name="totallyTimeSpent" value="19252000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="0" width="1421" height="900" extended-state="0" />
@@ -509,8 +509,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/businesstrip/business-trip.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="124" column="3" selection-start-line="124" selection-start-column="3" selection-end-line="124" selection-end-column="3" />
+        <state relative-caret-position="339">
+          <caret line="127" column="23" selection-start-line="127" selection-start-column="23" selection-end-line="127" selection-end-column="23" />
           <folding />
         </state>
       </provider>
