@@ -20,4 +20,11 @@ angular.module('businesstrip', []).controller('businessTripController', function
     $scope.p2333 = $scope.firstName + $scope.lastName;
     $scope.msg = '你好，Angular！';
 
+
+    $scope.airlinesFrom = ['Beijing','Shanghai','ZhengZhou'];
+    $scope.airlinesTo = ['Beijing','Shanghai','ZhengZhou'];
+    $scope.airports = ['海南航空'];
+
+    $scope.availableColors = ['Red','Green','Blue','Yellow','Magenta','Maroon','Umbra','Turquoise'];
+
 });

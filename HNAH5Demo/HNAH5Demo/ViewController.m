@@ -42,6 +42,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)sendMessage:(id)sender {
+    NSLog(@"--");
+}
 
 #pragma mark - UIWebViewDelegate
 
