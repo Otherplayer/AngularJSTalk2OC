@@ -7,7 +7,6 @@ angular.module('businesstrip', []).controller('businessTripController', function
     $scope.gwTitle = '';
     $scope.gwAddress = '';
     $scope.gwStartDate = '';
-    $scope.gwStartDate = '';
     $scope.gwEndDate = '';
     $scope.gwNeedAirTicket = true;
     $scope.airlinesFrom = ['Beijing','Shanghai','ZhengZhou'];
@@ -22,15 +21,11 @@ angular.module('businesstrip', []).controller('businessTripController', function
         //         $scope.names = response.sites;
         //     })
 
-    $scope.p2333 = $scope.firstName + $scope.lastName;
-    $scope.msg = '你好，Angular！';
-
-
     $scope.shouldApplyAirTicket = function (value) {
         $scope.gwNeedAirTicket = value;
     }
 
 
-    $scope.availableColors = ['Red','Green','Blue','Yellow','Magenta','Maroon','Umbra','Turquoise'];
+    // $scope.availableColors = ['Red','Green','Blue','Yellow','Magenta','Maroon','Umbra','Turquoise'];
 
 });

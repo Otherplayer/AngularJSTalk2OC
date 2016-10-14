@@ -24,8 +24,8 @@
       <file leaf-file-name="business-trip.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/components/businesstrip/business-trip.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="132" column="0" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+            <state relative-caret-position="176">
+              <caret line="115" column="17" selection-start-line="115" selection-start-column="17" selection-end-line="115" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -119,8 +119,8 @@
       <file leaf-file-name="business-trip.controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/components/businesstrip/business-trip.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+            <state relative-caret-position="330">
+              <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
               <folding>
                 <element signature="e#0#48#0" expanded="false" />
               </folding>
@@ -367,12 +367,12 @@
       <workItem from="1476342967334" duration="8069000" />
       <workItem from="1476353773747" duration="633000" />
       <workItem from="1476407814871" duration="66000" />
-      <workItem from="1476408159599" duration="11038000" />
+      <workItem from="1476408159599" duration="11457000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26397000" />
+    <option name="totallyTimeSpent" value="26816000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="1" width="1421" height="900" extended-state="0" />
@@ -656,8 +656,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/businesstrip/business-trip.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+        <state relative-caret-position="330">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
           <folding>
             <element signature="e#0#48#0" expanded="false" />
           </folding>
@@ -666,8 +666,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/businesstrip/business-trip.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="132" column="0" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+        <state relative-caret-position="176">
+          <caret line="115" column="17" selection-start-line="115" selection-start-column="17" selection-end-line="115" selection-end-column="17" />
           <folding />
         </state>
       </provider>
