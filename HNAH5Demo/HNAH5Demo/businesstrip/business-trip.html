@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html ng-app="businesstrip">
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="BIM,BOT,BIMBOT,HNA" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>HNA Business trip apply</title>
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <link rel="icon" type="image/x-icon" href="../../../assets/images/favicon.ico?v=0.1.0"/>
+
+  <!-- 引入 Bootstrap -->
+  <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+  <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+  <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+  <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- 引入 AngularJS -->
+  <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+
+  <script src="business-trip.controller.js"></script>
+</head>
+
+
+<body ng-controller="businessTripController">
+
+
+
+<div class="col-sm-6">
+  <form name="forma" class="form-horizontal form-validation">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <strong>出差申请</strong>
+      </div>
+      <div class="panel-body">
+        <div class="form-group">
+          <label class="col-sm-3 control-label">公文标题</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" placeholder="请输入公文标题" ng-model="firstName" required >
+          </div>
+        </div>
+        <div class="line line-dashed b-b line-lg pull-in"></div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label">出差地点</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" placeholder="您出差到什么地方" ng-model="lastName" required >
+          </div>
+        </div>
+        <div class="line line-dashed b-b line-lg pull-in"></div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label">出差时间</label>
+          <div class="col-sm-9">
+            <input type="date" class="form-control" placeholder="出差开始时间" ng-model="g.c" required >
+          </div>
+        </div>
+        <div class="line line-dashed b-b line-lg pull-in"></div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label">出差时间</label>
+          <div class="col-sm-9">
+            <input type="date" class="form-control" placeholder="出差结束时间" ng-model="g.d" required >
+          </div>
+        </div>
+        <div class="line line-dashed b-b line-lg pull-in"></div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label">是否申请机票</label>
+          <div class="col-sm-9">
+            <label class="checkbox-inline i-checks">
+              <input type="radio" name="optionsRadios" value="option1"><i></i> 是
+            </label>
+            <label class="checkbox-inline i-checks">
+              <input type="radio" name="optionsRadios" value="option2"><i></i> 否
+            </label>
+          </div>
+        </div>
+        <div class="line line-dashed b-b line-lg pull-in"></div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label">是否订座</label>
+          <div class="col-sm-9">
+            <label class="checkbox-inline i-checks">
+              <input type="radio" name="optionsRadios2" value="option1"><i></i> 是
+            </label>
+            <label class="checkbox-inline i-checks">
+              <input type="radio" name="optionsRadios2" value="option2"><i></i> 否
+            </label>
+          </div>
+        </div>
+        <div class="line line-dashed b-b line-lg pull-in"></div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label">航线选择</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" placeholder="(XXX) XXXX XXX" ng-model="g.g" ng-pattern="/\([0-9]{3}\) ([0-9]{3}) ([0-9]{3})$/" required >
+          </div>
+        </div>
+        <div class="line line-dashed b-b line-lg pull-in"></div>
+      </div>
+      <footer class="panel-footer text-right bg-light lter">
+        <button type="button" class="btn btn-default col-sm-6 col-md-6" onclick="cancelAction()">Cancel</button>
+        <button type="button" id="lbtnTest" class="btn btn-success col-sm-6 col-md-6" onclick="submitAction()">Submit</button>
+      </footer>
+    </div>
+  </form>
+</div>
+
+<script>
+
+  function submitAction() {
+    //通过controller来获取Angular应用
+    var appElement = document.querySelector('[ng-controller=businessTripController]');
+    //获取$scope变量
+    var $scope = angular.element(appElement).scope();
+    //调用msg变量，并改变msg的值
+    $scope.msg = '123456';
+    //上一行改变了msg的值，如果想同步到Angular控制器中，则需要调用$apply()方法即可
+    $scope.$apply();
+    $scope.p2333 = $scope.firstName + $scope.lastName;
+    console.log($scope.p2333);
+    JSObject.jsSubmit(JSON.stringify($scope.p2333));
+  }
+  function cancelAction() {
+    JSObject.jsCancel();
+  }
+
+  function JSObject() {
+    function jsSubmit(parameter) {}
+    function jsCancel() {}
+  }
+</script>
+
+</body>
+
+
+</html>

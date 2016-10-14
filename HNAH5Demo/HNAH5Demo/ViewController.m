@@ -20,11 +20,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    NSString *urlString = @"http://10.71.173.33:8080/bimbot-h5/src/app/components/businesstrip/business-trip.html";
+    
     [self.view addSubview:self.webView];
     self.webView.delegate = self;
     
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:urlString]];
+    
+//    NSString *urlString = @"http://10.71.173.33:8080/bimbot-h5/src/app/components/businesstrip/business-trip.html";
+//    NSURL *httpUrl = [NSURL URLWithString:urlString];
+    
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"business-trip" ofType:@"html"];
+    NSURL* httpUrl = [NSURL fileURLWithPath:path];
+    
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:httpUrl];
     [self.webView loadRequest:request];
     
 }
