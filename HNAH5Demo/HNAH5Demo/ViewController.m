@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "TransportJSObject.h"
+#import "HNAH5Controller.h"
 
 @interface ViewController ()<UIWebViewDelegate>
 
@@ -30,11 +31,22 @@
     
     
     NSString *path = [[NSBundle mainBundle] pathForResource:@"business-trip" ofType:@"html"];
-    NSURL* httpUrl = [NSURL fileURLWithPath:path];
+    NSURL* httpUrl = [NSURL URLWithString:path];
     
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:httpUrl];
     [self.webView loadRequest:request];
     
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"business-trip" ofType:@"html"];
+    
+    [self performSelector:@selector(sendMessage:) withObject:nil afterDelay:2];
+    
+//    HNAH5Controller *controller = [[HNAH5Controller alloc] init];
+//    controller.urlStr = path;
+//    [self.navigationController pushViewController:controller animated:YES];
 }
 
 
@@ -44,6 +56,13 @@
 }
 - (IBAction)sendMessage:(id)sender {
     NSLog(@"--");
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"business-trip" ofType:@"html"];
+    
+    HNAH5Controller *controller = [[HNAH5Controller alloc] init];
+    controller.urlStr = path;
+    [self.navigationController pushViewController:controller animated:YES];
+    
 }
 
 #pragma mark - UIWebViewDelegate

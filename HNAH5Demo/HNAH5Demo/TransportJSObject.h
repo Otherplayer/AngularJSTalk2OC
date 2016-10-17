@@ -21,4 +21,7 @@
 
 @interface TransportJSObject : NSObject<TransportJSObjectProtocol>
 
+@property (nonatomic, copy) void(^didClickCancelBlock)();
+@property (nonatomic, copy) void(^didClickSubmitBlock)(NSDictionary *info);
+
 @end

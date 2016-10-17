@@ -27,7 +27,7 @@
                                 <state key="normal" title="Button"/>
                             </button>
                             <connections>
-                                <action selector="sendMessage:" destination="BYZ-38-t0r" id="m5M-NP-rnv"/>
+                                <action selector="sendMessage:" destination="BYZ-38-t0r" id="xtN-2x-2mL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
