@@ -26,6 +26,10 @@
   <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
 
   <script src="business-trip.controller.js"></script>
+  <link rel="stylesheet" href="../common/app.css" type="text/css" />
+  <link rel="stylesheet" href="../common/font.css" type="text/css" />
+  <link rel="stylesheet" href="app.css" type="text/css" />
+  <link rel="stylesheet" href="font.css" type="text/css" />
 </head>
 
 
@@ -33,7 +37,7 @@
 
 
 <br/>
-<div class="col-sm-6">
+<div class="col-sm-12 col-xs-12">
   <form name="forma" class="form-horizontal form-validation">
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -81,7 +85,7 @@
             </label>
           </div>
         </div>
-        <div class="line line-dashed b-b line-lg pull-in"></div>
+        <!--<div class="line line-dashed b-b line-lg pull-in"></div>-->
         <!--<div class="form-group">-->
           <!--<label class="col-sm-3 control-label">是否订座</label>-->
           <!--<div class="col-sm-9">-->
@@ -93,7 +97,7 @@
             <!--</label>-->
           <!--</div>-->
         <!--</div>-->
-        <div class="line line-dashed b-b line-lg pull-in"></div>
+        <div class="line line-dashed b-b line-lg pull-in" ng-hide="!gwNeedAirTicket"></div>
         <div class="form-group" ng-hide="!gwNeedAirTicket">
           <label class="col-sm-3 control-label">航线选择</label>
         </div>
