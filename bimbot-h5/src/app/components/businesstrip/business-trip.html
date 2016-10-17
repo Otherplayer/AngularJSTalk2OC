@@ -78,7 +78,7 @@
           <label class="col-sm-3 control-label">是否申请机票</label>
           <div class="col-sm-9">
             <label class="checkbox-inline i-checks text-muted">
-              <input type="radio" ng-checked="gwNeedAirTicket" name="optionsRadios" ng-click="shouldApplyAirTicket(true)" value="option1"><i></i> 是
+              <input type="radio" ng-checked="gwNeedAirTicket" name="optionsRadios" ng-change="shouldApplyAirTicket(true)" value="option1"><i></i> 是
             </label>
             <label class="checkbox-inline i-checks text-muted">
               <input type="radio" ng-checked="!gwNeedAirTicket" name="optionsRadios" ng-click="shouldApplyAirTicket(false)" value="option2"><i></i> 否

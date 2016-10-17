@@ -65,7 +65,7 @@
                 <td>
                     <div class="checkbox">
                         <label class="i-checks">
-                            <input type="checkbox" ng-checked="field.optional"><i></i>
+                            <input type="checkbox" ng-click="businessTripItemsIsChanged($index)"><i></i>
                         </label>
                     </div>
                 </td>
@@ -98,7 +98,7 @@
                 <td>
                     <div class="checkbox">
                         <label class="i-checks">
-                            <input type="checkbox" ng-checked="true"><i></i>
+                            <input type="checkbox" ng-click="businessTripWipeItemsIsChanged($index)"><i></i>
                         </label>
                     </div>
                 </td>
@@ -113,6 +113,45 @@
 </div>
 
 </body>
+
+<script>
+
+    function submitAction() {
+        //通过controller来获取Angular应用
+        var appElement = document.querySelector('[ng-controller=businessVettingController]');
+        //获取$scope变量
+        var $scope = angular.element(appElement).scope();
+        //调用msg变量，并改变msg的值
+        //$scope.msg = '123456';
+        //上一行改变了msg的值，如果想同步到Angular控制器中，则需要调用$apply()方法即可
+        //$scope.$apply();
+
+        var results = [];
+        for (var i = 0; i < $scope.businessTrip.length; i++){
+            if ($scope.businessTrip[i].isGreen){
+                results.push($scope.businessTrip[i].name);
+            }
+        }
+        for (var i = 0; i < $scope.businessTripWipe.length; i++){
+            if ($scope.businessTripWipe[i].isGreen){
+                results.push($scope.businessTripWipe[i].name);
+            }
+        }
+
+        console.log(results);
+
+        var resultInfo = {"selects":results};
+        JSObject.jsSubmit(JSON.stringify(resultInfo));
+    }
+    function cancelAction() {
+        JSObject.jsCancel();
+    }
+
+    function JSObject() {
+        function jsSubmit(parameter) {}
+        function jsCancel() {}
+    }
+</script>
 
 
 </html>
