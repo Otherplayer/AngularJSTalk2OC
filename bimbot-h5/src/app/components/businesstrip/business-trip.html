@@ -78,10 +78,10 @@
           <label class="col-sm-3 control-label">是否申请机票</label>
           <div class="col-sm-9">
             <label class="checkbox-inline i-checks text-muted">
-              <input type="radio" ng-checked="gwNeedAirTicket" name="optionsRadios" ng-change="shouldApplyAirTicket(true)" value="option1"><i></i> 是
+              <input type="radio" ng-checked="gwNeedAirTicket" name="optionsRadios" ng-click="shouldApplyAirTicket(true)"><i></i> 是
             </label>
             <label class="checkbox-inline i-checks text-muted">
-              <input type="radio" ng-checked="!gwNeedAirTicket" name="optionsRadios" ng-click="shouldApplyAirTicket(false)" value="option2"><i></i> 否
+              <input type="radio" ng-checked="!gwNeedAirTicket" name="optionsRadios" ng-click="shouldApplyAirTicket(false)"><i></i> 否
             </label>
           </div>
         </div>
@@ -150,13 +150,13 @@
 
     var resultInfo = {"title":$scope.gwTitle,"address":$scope.gwAddress,"startDate":$scope.startDate,"endDate":$scope.endDate};
 
-    JSObject.jsSubmit(JSON.stringify(resultInfo));
+    JSObjectBridge.jsSubmit(JSON.stringify(resultInfo));
   }
   function cancelAction() {
-    JSObject.jsCancel();
+    JSObjectBridge.jsCancel();
   }
 
-  function JSObject() {
+  function JSObjectBridge() {
     function jsSubmit(parameter) {}
     function jsCancel() {}
   }

@@ -141,13 +141,13 @@
         console.log(results);
 
         var resultInfo = {"selects":results};
-        JSObject.jsSubmit(JSON.stringify(resultInfo));
+        JSObjectBridge.jsSubmit(JSON.stringify(resultInfo));
     }
     function cancelAction() {
-        JSObject.jsCancel();
+        JSObjectBridge.jsCancel();
     }
 
-    function JSObject() {
+    function JSObjectBridge() {
         function jsSubmit(parameter) {}
         function jsCancel() {}
     }

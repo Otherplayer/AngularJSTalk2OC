@@ -15,7 +15,7 @@
 
 
 #define IS_OFFLINE_TEST 1
-#define JSObjectIdentifier @"JSObject"
+#define JSObjectIdentifier @"JSObjectBridge"
 #define JSContextKey @"documentView.webView.mainFrame.javaScriptContext"
 #define kMainWidth [[UIScreen mainScreen] bounds].size.width
 #define kMainHeight [[UIScreen mainScreen] bounds].size.height

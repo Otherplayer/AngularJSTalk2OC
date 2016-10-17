@@ -6,8 +6,8 @@
 angular.module('businesstrip', []).controller('businessTripController', function($scope,$http) {
     $scope.gwTitle = '';
     $scope.gwAddress = '';
-    $scope.gwStartDate = '';
-    $scope.gwEndDate = '';
+    $scope.gwStartDate = new Date();
+    $scope.gwEndDate = new Date();
     $scope.gwNeedAirTicket = true;
     $scope.airlinesFrom = ['Beijing','Shanghai','ZhengZhou'];
     $scope.airlinesTo = ['Beijing','Shanghai','ZhengZhou'];
