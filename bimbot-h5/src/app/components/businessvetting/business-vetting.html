@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html ng-app="businessvetting">
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="BIM,BOT,BIMBOT,HNA" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>HNA Business trip apply</title>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="icon" type="image/x-icon" href="../../../assets/images/favicon.ico?v=0.1.0"/>
+
+    <!-- 引入 Bootstrap -->
+    <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+    <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- 引入 AngularJS -->
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+
+    <script src="business-vetting.controller.js"></script>
+    <script src="../common/smart-table.js"></script>
+    <link rel="stylesheet" href="../common/app.css" type="text/css" />
+    <link rel="stylesheet" href="../common/font.css" type="text/css" />
+    <script src="smart-table.js"></script>
+    <link rel="stylesheet" href="app.css" type="text/css" />
+    <link rel="stylesheet" href="font.css" type="text/css" />
+</head>
+
+
+<body ng-controller="businessVettingController">
+
+
+<br/>
+<div class="panel panel-default">
+
+    <div class="panel-heading">
+        <h3>待审批【出差申请】列表</h3>
+    </div>
+    <div class="panel-body">
+        <table st-table="businessTrip" class="table table-bordered table-striped table-hover bg-white text-center m-n">
+            <thead class="bg-info">
+            <tr>
+                <th class="col-xs-1 col-sm-1 text-center" st-sort="firstName">申请人</th>
+                <th class="col-xs-4 col-sm-4 text-center" st-sort="lastName">标题</th>
+                <th class="col-xs-1 col-sm-1 text-center" st-sort="birthDate">出差地点</th>
+                <th class="col-xs-4 col-sm-4 text-center" st-sort="balance">时间</th>
+                <th class="col-xs-1 col-sm-1 text-center" st-sort="balance">是否同意</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!--multiple-->
+            <tr st-select-row="row" st-select-mode="single" ng-repeat="row in businessTrip">
+                <td>{{row.name}}</td>
+                <td>{{row.title}}</td>
+                <td>{{row.to}}</td>
+                <td>{{row.date | date}}</td>
+                <td>
+                    <div class="checkbox">
+                        <label class="i-checks">
+                            <input type="checkbox" ng-checked="field.optional"><i></i>
+                        </label>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="panel-heading">
+        <h3>待审批【差旅报销】列表</h3>
+    </div>
+    <div class="panel-body">
+        <table st-table="businessTripWipe" class="table table-bordered table-striped table-hover bg-white text-center m-n">
+            <thead class="bg-danger">
+            <tr>
+                <th class="col-xs-1 col-sm-1 text-center" st-sort="firstName">申请人</th>
+                <th class="col-xs-4 col-sm-4 text-center" st-sort="lastName">报销事项</th>
+                <th class="col-xs-4 col-sm-4 text-center" st-sort="lastName">项目</th>
+                <th class="col-xs-2 col-sm-2 text-center" st-sort="birthDate">总金额</th>
+                <!--<th class="col-xs-1 col-sm-1 text-center" st-sort="balance">时间</th>-->
+                <th class="col-xs-1 col-sm-1 text-center" st-sort="balance">是否同意</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr st-select-row="row" st-select-mode="single" ng-repeat="row in businessTripWipe">
+                <td>{{row.name}}</td>
+                <td>{{row.title}}</td>
+                <td>{{row.title}}</td>
+                <td>{{row.to}}</td>
+                <!--<td>{{row.date | date}}</td>-->
+                <td>
+                    <div class="checkbox">
+                        <label class="i-checks">
+                            <input type="checkbox" ng-checked="true"><i></i>
+                        </label>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <footer class="panel-footer text-right bg-light lter  col-xs-12 col-sm-12">
+        <button type="button" class="btn btn-default col-sm-6 col-md-6" onclick="cancelAction()">Cancel</button>
+        <button type="submit" id="lbtnTest" class="btn btn-success col-sm-6 col-md-6" onclick="submitAction()">Submit</button>
+    </footer>
+</div>
+
+</body>
+
+
+</html>

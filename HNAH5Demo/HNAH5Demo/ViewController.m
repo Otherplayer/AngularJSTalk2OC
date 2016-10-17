@@ -29,7 +29,7 @@
 //    NSURL *httpUrl = [NSURL URLWithString:urlString];
     
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"business-trip" ofType:@"html"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"business-vetting" ofType:@"html"];
     NSURL* httpUrl = [NSURL fileURLWithPath:path];
     
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:httpUrl];
