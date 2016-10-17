@@ -3,7 +3,11 @@
  */
 
 
-angular.module('businesstrip', []).controller('businessTripController', function($scope,$http) {
+angular.module('businesstrip', []).controller('businessTripController', function($scope,$http,$location) {
+                                              
+                                              
+    console.log($location.absUrl());
+                                              
     $scope.gwTitle = '';
     $scope.gwAddress = '';
     $scope.gwStartDate = '';

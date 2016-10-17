@@ -31,16 +31,22 @@
     
     
     NSString *path = [[NSBundle mainBundle] pathForResource:@"business-trip" ofType:@"html"];
+    path = [path stringByAppendingString:@"?para=abcdefg"];
     NSURL* httpUrl = [NSURL URLWithString:path];
     
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:httpUrl];
     [self.webView loadRequest:request];
     
+    
+    
+    NSArray *items = [path componentsSeparatedByString:@"?"];
+    NSLog(@"%@",[[[items lastObject] componentsSeparatedByString:@"="] lastObject]);
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"business-trip" ofType:@"html"];
+//    NSString *path = [[NSBundle mainBundle] pathForResource:@"business-trip" ofType:@"html"];
     
     [self performSelector:@selector(sendMessage:) withObject:nil afterDelay:2];
     

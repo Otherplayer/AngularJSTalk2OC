@@ -3,7 +3,10 @@
  */
 
 
-angular.module('businesstrip', []).controller('businessTripController', function($scope,$http) {
+angular.module('businesstrip', []).controller('businessTripController', function($scope,$http,$location) {
+
+    console.log($location.absUrl());
+
     $scope.gwTitle = '';
     $scope.gwAddress = '';
     $scope.gwStartDate = new Date();
@@ -25,7 +28,22 @@ angular.module('businesstrip', []).controller('businessTripController', function
         $scope.gwNeedAirTicket = value;
     }
 
+    // $http({
+    //     url:'data.json',
+    //     method:'GET'
+    // }).success(function(data,header,config,status){
+    //      //响应成功
+    // }).error(function(data,header,config,status){
+    //      //处理响应失败
+    // });
 
+    // $http({
+    //     method : 'POST',
+    //     params :{ userId : 'abcd'},
+    //     headers : { 'Content-Type': 'application/x-www-form-urlencoded' }
+    // }).success(function(res){
+    //         // 回调函数
+    // })
     // $scope.availableColors = ['Red','Green','Blue','Yellow','Magenta','Maroon','Umbra','Turquoise'];
 
 });
